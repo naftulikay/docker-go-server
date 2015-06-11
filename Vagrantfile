@@ -19,10 +19,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Provisioning with Puppet Standalone
     config.vm.provision :puppet do |puppet|
-        puppet.hiera_config_path = "conf/puppet/hiera.yaml"
-        puppet.manifests_path = "manifests"
+        puppet.hiera_config_path = "conf/vagrant/puppet/hiera.yaml"
+        puppet.manifests_path = "conf/vagrant/puppet/manifests"
         puppet.manifest_file  = "vagrant.pp"
-        puppet.module_path = "modules"
+        puppet.module_path = "conf/vagrant/puppet/modules"
         # enable for debugging Puppet problems
         # puppet.options = ["--debug", "--trace"]
     end
